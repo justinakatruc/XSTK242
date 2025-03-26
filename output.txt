@@ -1,0 +1,259 @@
+DataFrame Info:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 10000 entries, 0 to 9999
+Data columns (total 9 columns):
+ #   Column            Non-Null Count  Dtype  
+---  ------            --------------  -----  
+ 0   id                10000 non-null  int64  
+ 1   full_name         10000 non-null  object 
+ 2   age               5234 non-null   float64
+ 3   gender            5307 non-null   object 
+ 4   device_type       8000 non-null   object 
+ 5   ad_position       8000 non-null   object 
+ 6   browsing_history  5218 non-null   object 
+ 7   time_of_day       8000 non-null   object 
+ 8   click             10000 non-null  int64  
+dtypes: float64(1), int64(2), object(6)
+memory usage: 703.3+ KB
+
+First 5 rows:
+     id full_name   age      gender device_type ad_position browsing_history time_of_day  click
+0   670   User670  22.0         NaN     Desktop         Top         Shopping   Afternoon      1
+1  3044  User3044   NaN        Male     Desktop         Top              NaN         NaN      1
+2  5912  User5912  41.0  Non-Binary         NaN        Side        Education       Night      1
+3  5418  User5418  34.0        Male         NaN         NaN    Entertainment     Evening      1
+4  9452  User9452  39.0  Non-Binary         NaN         NaN     Social Media     Morning      0
+
+Distribution of the target variable 'click':
+click
+1    0.65
+0    0.35
+Name: proportion, dtype: float64
+
+Descriptive statistics for 'age':
+count    5234.000000
+mean       40.197363
+std        13.126420
+min        18.000000
+25%        29.000000
+50%        39.500000
+75%        52.000000
+max        64.000000
+Name: age, dtype: float64
+
+Age Statistics:
+Mean: 40.197363393198316
+Variance: 172.30290915628245
+Standard Deviation: 13.126420271966095
+Median: 39.5
+
+Descriptive statistics for 'click':
+count    10000.000000
+mean         0.650000
+std          0.476993
+min          0.000000
+25%          0.000000
+50%          1.000000
+75%          1.000000
+max          1.000000
+Name: click, dtype: float64
+
+Click Statistics:
+Mean: 0.65
+Variance: 0.22752275227522753
+Standard Deviation: 0.47699345097729334
+Median: 1.0
+
+Value counts for 'gender':
+gender
+Female        1834
+Male          1810
+Non-Binary    1663
+Name: count, dtype: int64
+
+Value counts for 'device_type':
+device_type
+Desktop    2754
+Mobile     2649
+Tablet     2597
+Name: count, dtype: int64
+
+Value counts for 'ad_position':
+ad_position
+Bottom    2817
+Top       2597
+Side      2586
+Name: count, dtype: int64
+
+Value counts for 'browsing_history':
+browsing_history
+Entertainment    1175
+Social Media     1054
+Education        1029
+Shopping          984
+News              976
+Name: count, dtype: int64
+
+Value counts for 'time_of_day':
+time_of_day
+Morning      2126
+Afternoon    2016
+Evening      1958
+Night        1900
+Name: count, dtype: int64
+
+Age statistics by gender (descriptive):
+             count       mean        std   min   25%   50%   75%   max
+gender                                                                
+Female       969.0  40.207430  13.540088  18.0  28.0  40.0  52.0  64.0
+Male        1003.0  39.568295  13.275301  18.0  28.0  39.0  52.0  64.0
+Non-Binary   776.0  40.871134  12.408276  18.0  30.0  41.0  52.0  64.0
+
+Click rate statistics by device type (descriptive):
+              count      mean       std  min  25%  50%  75%  max
+device_type                                                     
+Desktop      2754.0  0.664125  0.472381  0.0  0.0  1.0  1.0  1.0
+Mobile       2649.0  0.633447  0.481954  0.0  0.0  1.0  1.0  1.0
+Tablet       2597.0  0.648055  0.477669  0.0  0.0  1.0  1.0  1.0
+
+Click rate statistics by ad position (descriptive):
+              count      mean       std  min  25%  50%  75%  max
+ad_position                                                     
+Bottom       2817.0  0.687256  0.463693  0.0  0.0  1.0  1.0  1.0
+Side         2586.0  0.631477  0.482497  0.0  0.0  1.0  1.0  1.0
+Top          2597.0  0.634963  0.481533  0.0  0.0  1.0  1.0  1.0
+
+Click rate statistics by browsing history (descriptive):
+                   count      mean       std  min  25%  50%  75%  max
+browsing_history                                                     
+Education         1029.0  0.627794  0.483628  0.0  0.0  1.0  1.0  1.0
+Entertainment     1175.0  0.687660  0.463645  0.0  0.0  1.0  1.0  1.0
+News               976.0  0.591189  0.491866  0.0  0.0  1.0  1.0  1.0
+Shopping           984.0  0.645325  0.478658  0.0  0.0  1.0  1.0  1.0
+Social Media      1054.0  0.635674  0.481469  0.0  0.0  1.0  1.0  1.0
+
+Click rate statistics by time of day (descriptive):
+              count      mean       std  min  25%  50%  75%  max
+time_of_day                                                     
+Afternoon    2016.0  0.685516  0.464425  0.0  0.0  1.0  1.0  1.0
+Evening      1958.0  0.629724  0.483002  0.0  0.0  1.0  1.0  1.0
+Morning      2126.0  0.665099  0.472067  0.0  0.0  1.0  1.0  1.0
+Night        1900.0  0.624737  0.484318  0.0  0.0  1.0  1.0  1.0
+
+Click rate statistics by multiple variables (descriptive):
+                                     count      mean       std  min   25%  50%  75%  max
+device_type ad_position time_of_day                                                     
+Desktop     Bottom      Afternoon    173.0  0.739884  0.439971  0.0  0.00  1.0  1.0  1.0
+                        Evening      146.0  0.650685  0.478395  0.0  0.00  1.0  1.0  1.0
+                        Morning      159.0  0.710692  0.454874  0.0  0.00  1.0  1.0  1.0
+                        Night        139.0  0.633094  0.483704  0.0  0.00  1.0  1.0  1.0
+            Side        Afternoon    120.0  0.625000  0.486153  0.0  0.00  1.0  1.0  1.0
+                        Evening      139.0  0.582734  0.494891  0.0  0.00  1.0  1.0  1.0
+                        Morning      179.0  0.754190  0.431774  0.0  1.00  1.0  1.0  1.0
+                        Night        148.0  0.682432  0.467111  0.0  0.00  1.0  1.0  1.0
+            Top         Afternoon    153.0  0.732026  0.444358  0.0  0.00  1.0  1.0  1.0
+                        Evening      130.0  0.600000  0.491793  0.0  0.00  1.0  1.0  1.0
+                        Morning      123.0  0.552846  0.499233  0.0  0.00  1.0  1.0  1.0
+                        Night        186.0  0.677419  0.468725  0.0  0.00  1.0  1.0  1.0
+Mobile      Bottom      Afternoon    144.0  0.736111  0.442278  0.0  0.00  1.0  1.0  1.0
+                        Evening      154.0  0.694805  0.461992  0.0  0.00  1.0  1.0  1.0
+                        Morning      149.0  0.744966  0.437350  0.0  0.00  1.0  1.0  1.0
+                        Night        181.0  0.646409  0.479410  0.0  0.00  1.0  1.0  1.0
+            Side        Afternoon    108.0  0.611111  0.489771  0.0  0.00  1.0  1.0  1.0
+                        Evening      113.0  0.469027  0.501263  0.0  0.00  0.0  1.0  1.0
+                        Morning      163.0  0.680982  0.467533  0.0  0.00  1.0  1.0  1.0
+                        Night        153.0  0.581699  0.494900  0.0  0.00  1.0  1.0  1.0
+            Top         Afternoon    165.0  0.727273  0.446718  0.0  0.00  1.0  1.0  1.0
+                        Evening      130.0  0.638462  0.482305  0.0  0.00  1.0  1.0  1.0
+                        Morning      136.0  0.602941  0.491097  0.0  0.00  1.0  1.0  1.0
+                        Night        115.0  0.495652  0.502169  0.0  0.00  0.0  1.0  1.0
+Tablet      Bottom      Afternoon    132.0  0.628788  0.484970  0.0  0.00  1.0  1.0  1.0
+                        Evening      151.0  0.682119  0.467202  0.0  0.00  1.0  1.0  1.0
+                        Morning      152.0  0.651316  0.478129  0.0  0.00  1.0  1.0  1.0
+                        Night        127.0  0.645669  0.480204  0.0  0.00  1.0  1.0  1.0
+            Side        Afternoon    156.0  0.666667  0.472923  0.0  0.00  1.0  1.0  1.0
+                        Evening      178.0  0.691011  0.463380  0.0  0.00  1.0  1.0  1.0
+                        Morning      148.0  0.587838  0.493895  0.0  0.00  1.0  1.0  1.0
+                        Night         80.0  0.425000  0.497462  0.0  0.00  0.0  1.0  1.0
+            Top         Afternoon    100.0  0.580000  0.496045  0.0  0.00  1.0  1.0  1.0
+                        Evening      149.0  0.610738  0.489227  0.0  0.00  1.0  1.0  1.0
+                        Morning      144.0  0.750000  0.434524  0.0  0.75  1.0  1.0  1.0
+                        Night        113.0  0.637168  0.482959  0.0  0.00  1.0  1.0  1.0
+
+Age statistics by gender (aggregating):
+                 mean  median        std         var
+gender                                              
+Female      40.207430    40.0  13.540088  183.333994
+Male        39.568295    39.0  13.275301  176.233605
+Non-Binary  40.871134    41.0  12.408276  153.965308
+
+Click rate statistics by device type (aggregating):
+                 mean  median       std       var
+device_type                                      
+Desktop      0.664125     1.0  0.472381  0.223144
+Mobile       0.633447     1.0  0.481954  0.232280
+Tablet       0.648055     1.0  0.477669  0.228167
+
+Click rate statistics by ad position (aggregating):
+                 mean  median       std       var
+ad_position                                      
+Bottom       0.687256     1.0  0.463693  0.215012
+Side         0.631477     1.0  0.482497  0.232804
+Top          0.634963     1.0  0.481533  0.231874
+
+Click rate statistics by browsing history (aggregating):
+                      mean  median       std       var
+browsing_history                                      
+Education         0.627794     1.0  0.483628  0.233896
+Entertainment     0.687660     1.0  0.463645  0.214967
+News              0.591189     1.0  0.491866  0.241933
+Shopping          0.645325     1.0  0.478658  0.229113
+Social Media      0.635674     1.0  0.481469  0.231813
+
+Click rate statistics by time of day (aggregating):
+                 mean  median       std       var
+time_of_day                                      
+Afternoon    0.685516     1.0  0.464425  0.215691
+Evening      0.629724     1.0  0.483002  0.233291
+Morning      0.665099     1.0  0.472067  0.222847
+Night        0.624737     1.0  0.484318  0.234564
+
+Click rate statistics by multiple variables (aggregating):
+                                         mean  median       std       var
+device_type ad_position time_of_day                                      
+Desktop     Bottom      Afternoon    0.739884     1.0  0.439971  0.193574
+                        Evening      0.650685     1.0  0.478395  0.228862
+                        Morning      0.710692     1.0  0.454874  0.206910
+                        Night        0.633094     1.0  0.483704  0.233969
+            Side        Afternoon    0.625000     1.0  0.486153  0.236345
+                        Evening      0.582734     1.0  0.494891  0.244917
+                        Morning      0.754190     1.0  0.431774  0.186429
+                        Night        0.682432     1.0  0.467111  0.218193
+            Top         Afternoon    0.732026     1.0  0.444358  0.197454
+                        Evening      0.600000     1.0  0.491793  0.241860
+                        Morning      0.552846     1.0  0.499233  0.249234
+                        Night        0.677419     1.0  0.468725  0.219704
+Mobile      Bottom      Afternoon    0.736111     1.0  0.442278  0.195610
+                        Evening      0.694805     1.0  0.461992  0.213437
+                        Morning      0.744966     1.0  0.437350  0.191275
+                        Night        0.646409     1.0  0.479410  0.229834
+            Side        Afternoon    0.611111     1.0  0.489771  0.239875
+                        Evening      0.469027     0.0  0.501263  0.251264
+                        Morning      0.680982     1.0  0.467533  0.218587
+                        Night        0.581699     1.0  0.494900  0.244926
+            Top         Afternoon    0.727273     1.0  0.446718  0.199557
+                        Evening      0.638462     1.0  0.482305  0.232618
+                        Morning      0.602941     1.0  0.491097  0.241176
+                        Night        0.495652     0.0  0.502169  0.252174
+Tablet      Bottom      Afternoon    0.628788     1.0  0.484970  0.235195
+                        Evening      0.682119     1.0  0.467202  0.218278
+                        Morning      0.651316     1.0  0.478129  0.228608
+                        Night        0.645669     1.0  0.480204  0.230596
+            Side        Afternoon    0.666667     1.0  0.472923  0.223656
+                        Evening      0.691011     1.0  0.463380  0.214721
+                        Morning      0.587838     1.0  0.493895  0.243933
+                        Night        0.425000     0.0  0.497462  0.247468
+            Top         Afternoon    0.580000     1.0  0.496045  0.246061
+                        Evening      0.610738     1.0  0.489227  0.239343
+                        Morning      0.750000     1.0  0.434524  0.188811
+                        Night        0.637168     1.0  0.482959  0.233249
